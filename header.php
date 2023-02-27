@@ -25,23 +25,36 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the1-darkside' ); ?></a>
-
 	<header id="masthead" class="site-header">
+        <?php
+        $default = '';
+        if(get_theme_mod('title_one') !== $default) : ?>
         <div class="container-fluid no-padding no-margin mh-cta-slider">
             <div id="masthead-cta-slider" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <h3>Product Category #1<i class="lni lni-chevron-right-circle"></i></i></h3>
+                    <div id="cta-slider1-refresh" class="carousel-item active">
+                        <a class="header-cta-slider-link" href="<?php echo get_theme_mod('title_one_link'); ?>" title="<?php echo get_theme_mod('title_one') ?>">
+                        <h3><?php echo get_theme_mod('title_one') ?><i class="lni lni-chevron-right-circle"></i></i></h3>
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <h3>Product Category #2<i class="lni lni-chevron-right-circle"></i></i></h3>
+                    <?php if(get_theme_mod('title_two') !== $default) : ?>
+                    <div id="cta-slider2-refresh" class="carousel-item">
+                        <a class="header-cta-slider-link" href="<?php echo get_theme_mod('title_two_link'); ?>" title="<?php echo get_theme_mod('title_two') ?>">
+                        <h3><?php echo get_theme_mod('title_two') ?><i class="lni lni-chevron-right-circle"></i></i></h3>
+                        </a>
                     </div>
-                    <div class="carousel-item">
-                        <h3>Product Category #3<i class="lni lni-chevron-right-circle"></i></h3>
+                    <?php endif; ?>
+                    <?php if(get_theme_mod('title_three') !== $default) : ?>
+                    <div id="cta-slider3-refresh" class="carousel-item">
+                       <a class="header-cta-slider-link" href="<?php echo get_theme_mod('title_three_link'); ?>" title="<?php echo get_theme_mod('title_three', $default) ?>">
+                        <h3><?php echo get_theme_mod('title_three') ?><i class="lni lni-chevron-right-circle"></i></h3>
+                       </a>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();

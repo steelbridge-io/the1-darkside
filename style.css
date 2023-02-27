@@ -519,6 +519,7 @@ table {
 --------------------------------------------- */
 a {
   color: #4169e1;
+  text-decoration: none;
 }
 a:visited {
   color: #800080;
@@ -910,6 +911,16 @@ textarea {
   margin-bottom: 1.5em;
 }
 
+/* Customizer
+--------------------------------------------- */
+/** Customizer CSS */
+.customize-partial-edit-shortcut.customize-partial-edit-shortcut-title_one,
+.customize-partial-edit-shortcut.customize-partial-edit-shortcut-title_two,
+.customize-partial-edit-shortcut.customize-partial-edit-shortcut-title_three {
+  margin-top: 0.5rem;
+  left: 27rem;
+}
+
 /* Margins and Alignments
 --------------------------------------------- */
 /** Margins and Padding */
@@ -933,6 +944,9 @@ Adds custom stuff....
 }
 #masthead-cta-slider .carousel-inner .carousel-item {
   text-align: center;
+}
+#masthead-cta-slider .carousel-inner .carousel-item .header-cta-slider-link {
+  color: #000000;
 }
 #masthead-cta-slider .carousel-inner .carousel-item h3 {
   display: flex;
