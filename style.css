@@ -910,10 +910,29 @@ textarea {
   margin-bottom: 1.5em;
 }
 
+/* Margins and Alignments
+--------------------------------------------- */
+/** Margins and Padding */
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
 /* Bootstrap override
 --------------------------------------------- */
 /** Bootstrap Override
 Adds custom stuff....
 */
+/** Mastehead CTA Slider */
+#masthead-cta-slider {
+  max-height: 100px;
+  background-color: #FEF78D;
+}
+#masthead-cta-slider .carousel-inner .carousel-item {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */

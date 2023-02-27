@@ -26,6 +26,21 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the1-darkside' ); ?></a>
 
 	<header id="masthead" class="site-header">
+        <div class="container-fluid no-padding no-margin mh-cta-slider">
+            <div id="masthead-cta-slider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h3>Product #1</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Product #2</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Product #3</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
