@@ -12,6 +12,9 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+include_once ('navwalker.php');
+
+register_nav_menu('main-menu', 'Bootstrap menu');
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
