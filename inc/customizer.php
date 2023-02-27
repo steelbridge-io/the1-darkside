@@ -31,6 +31,46 @@ function the1_darkside_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	// Header Banner Section
+	$wp_customize -> add_section(
+		'header_cta_slider',
+		array (
+			'title'							=> __('Header CTA Slider'),
+			'description'				=> __(''),
+			'priority'					=> 10,
+			//'active_callback'		=> function() { return is_page_template('page-templates/blog-template.php');}
+		)
+	);
+
+	// Add Header Banner Title One Setting
+	$wp_customize -> add_setting ( 'title_one', array(
+		'default'							=> __('Slider Title &#35;1'),
+		'type'								=> 'theme_mod',
+		'sanitize_callback'		=> 'sanitize_text_field',
+		'transport'						=> 'postMessage',
+	));
+	// Add Header Banner Title One Control
+	$wp_customize -> add_control (
+		new WP_Customize_Control (
+			$wp_customize,
+			'title_one', array (
+				'label'				=> __( 'Slider Title &#35;1', 'the1-darkside' ),
+				'section'			=> 'header_cta_slider',
+				'settings'		=> 'title_one',
+				'type'				=> 'text',
+				'description'	=> __('Add CTA'),
+				'priority' 		=> 10,
+			)
+		)
+	);
+
+
+
+
+
+
+
 }
 add_action( 'customize_register', 'the1_darkside_customize_register' );
 

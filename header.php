@@ -18,10 +18,6 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head();
-    $api_key = '17e3921a383e4cfb95f70355f66e2b4b';
-    $icon_id = 'next-3241083';
-
-    $icon_url = 'https://api.thenounproject.com/icon/' . $icon_id . '?api_key=' . $api_key;
     ?>
 </head>
 
