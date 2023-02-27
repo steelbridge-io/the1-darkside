@@ -934,5 +934,16 @@ Adds custom stuff....
 #masthead-cta-slider .carousel-inner .carousel-item {
   text-align: center;
 }
+#masthead-cta-slider .carousel-inner .carousel-item h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+#masthead-cta-slider .carousel-inner .carousel-item h3 .lni.lni-chevron-right-circle {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-left: 1rem;
+}
 
 /*# sourceMappingURL=style.css.map */

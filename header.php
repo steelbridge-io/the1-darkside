@@ -17,7 +17,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<?php wp_head();
+    $api_key = '17e3921a383e4cfb95f70355f66e2b4b';
+    $icon_id = 'next-3241083';
+
+    $icon_url = 'https://api.thenounproject.com/icon/' . $icon_id . '?api_key=' . $api_key;
+    ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -30,13 +35,13 @@
             <div id="masthead-cta-slider" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <h3>Product #1</h3>
+                        <h3>Product Category #1<i class="lni lni-chevron-right-circle"></i></i></h3>
                     </div>
                     <div class="carousel-item">
-                        <h3>Product #2</h3>
+                        <h3>Product Category #2<i class="lni lni-chevron-right-circle"></i></i></h3>
                     </div>
                     <div class="carousel-item">
-                        <h3>Product #3</h3>
+                        <h3>Product Category #3<i class="lni lni-chevron-right-circle"></i></h3>
                     </div>
                 </div>
             </div>

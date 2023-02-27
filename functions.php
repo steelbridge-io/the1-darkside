@@ -140,6 +140,10 @@ add_action( 'widgets_init', 'the1_darkside_widgets_init' );
 function the1_darkside_scripts() {
 	wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css', array(), '5.3', 'all');
 	wp_enqueue_style('bootstrap');
+
+	wp_register_style('lineicons', 'https://cdn.lineicons.com/4.0/lineicons.css', array(), '4.0', 'all');
+	wp_enqueue_style('lineicons');
+
 	wp_enqueue_style( 'the1-darkside-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'the1-darkside-style', 'rtl', 'replace' );
 
