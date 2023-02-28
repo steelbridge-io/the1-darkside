@@ -107,3 +107,12 @@
 		flex: 1 0 50%;
 	}
 }
+
+#menu-primary-menu {
+	margin: 0 auto;
+	.menu-item {
+		a {
+			color: $color__font-smoke-white;
+		}
+	}
+}

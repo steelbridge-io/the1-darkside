@@ -615,6 +615,12 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+/** Site Branding */
+.site-branding .row {
+  justify-content: center;
+  align-items: center;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -694,6 +700,13 @@ textarea {
 .post-navigation .nav-next {
   text-align: end;
   flex: 1 0 50%;
+}
+
+#menu-primary-menu {
+  margin: 0 auto;
+}
+#menu-primary-menu .menu-item a {
+  color: #f5f5f5;
 }
 
 /* Posts and pages

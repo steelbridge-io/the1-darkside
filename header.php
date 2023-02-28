@@ -55,29 +55,50 @@
             </div>
         </div>
         <?php endif; ?>
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$the1_darkside_description = get_bloginfo( 'description', 'display' );
-			if ( $the1_darkside_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $the1_darkside_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+        <div class="container">
+            <div class="site-branding">
+             <div class="row">
+              <div class="col-3">
+                <?php
+                the_custom_logo();
+                if ( is_front_page() && is_home() ) :
+                    ?>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+              </div>
+              <div class="col-3">
+	                <?php get_search_form(); ?>
+              </div>
+                 <div class="col-3">
+                    <!--Custom cart start-->
+	                <?php global $woocommerce; ?>
+                    <a class="your-class-name" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"
+                       title="<?php _e('Cart View', 'woothemes'); ?>"><i class="lni lni-cart"></i>
+                        <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'),
+                            $woocommerce->cart->cart_contents_count);?>  -
+                        <?php echo $woocommerce->cart->get_cart_total(); ?>
+                    </a>
+                    <!--Custom cart end-->
+                 </div>
+                    <?php
+                else :
+                    ?>
+                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php
+                endif;
+                $the1_darkside_description = get_bloginfo( 'description', 'display' );
+                if ( $the1_darkside_description || is_customize_preview() ) :
+                    ?>
+                    <p class="site-description"><?php echo $the1_darkside_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+                <?php endif; ?>
+             </div>
+            </div><!-- .site-branding -->
+        </div>
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <nav class="navbar navbar-expand-md navbar bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <div class="container">
+                <!--<a class="navbar-brand" href="#">Navbar</a>-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -94,6 +115,8 @@
                         'walker' => new bootstrap_5_wp_nav_menu_walker()
                     ));
                     ?>
+
+                </div>
                 </div>
             </div>
         </nav>
