@@ -58,20 +58,20 @@
         <div class="container">
             <div class="site-branding">
              <div class="row">
-              <div class="col-3">
+              <?php if ( is_front_page() && is_home() ) : ?>
+              <div class="col-lg-3">
                 <?php
                 the_custom_logo();
-                if ( is_front_page() && is_home() ) :
                     ?>
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
               </div>
               <div class="col-3">
 	                <?php get_search_form(); ?>
               </div>
-                 <div class="col-3">
+                 <div class="col-lg-3">
                     <!--Custom cart start-->
 	                <?php global $woocommerce; ?>
-                    <a class="your-class-name" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"
+                    <a class="header-cart-url" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"
                        title="<?php _e('Cart View', 'woothemes'); ?>"><i class="lni lni-cart"></i>
                         <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'),
                             $woocommerce->cart->cart_contents_count);?>  -
@@ -82,8 +82,26 @@
                     <?php
                 else :
                     ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                    <?php
+
+                <div class="col-xl-3">
+                    <?php the_custom_logo(); ?>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                 <?php get_search_form(); ?>
+                </div>
+                <div class="col-md-6 col-xl-3">
+                    <!--Custom cart start-->
+                    <?php global $woocommerce; ?>
+                    <a class="header-cart-url" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"
+                       title="<?php _e('Cart View', 'woothemes'); ?>"><i class="lni lni-cart"></i>
+                        <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'),
+                            $woocommerce->cart->cart_contents_count);?>  -
+                        <?php echo $woocommerce->cart->get_cart_total(); ?>
+                    </a>
+                    <!--Custom cart end-->
+                </div>
+                <?php
                 endif;
                 $the1_darkside_description = get_bloginfo( 'description', 'display' );
                 if ( $the1_darkside_description || is_customize_preview() ) :
@@ -93,7 +111,6 @@
              </div>
             </div><!-- .site-branding -->
         </div>
-
 
         <nav class="navbar navbar-expand-md navbar bg-dark">
             <div class="container-fluid">

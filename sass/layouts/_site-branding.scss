@@ -1,1 +1,1 @@
-/** Site Branding */.site-branding {  .row {    justify-content: center;    align-items: center;  }}
+/** Site Branding */.site-branding {  .row {    justify-content: center;    align-items: center;    .col-3 {      .header-cart-url {        display: flex;        align-items: center;        color: $color__black;        .lni-cart {          font-size: 2rem;          margin-right: .418em;        }      }    }  }}
